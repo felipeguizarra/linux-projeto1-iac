@@ -15,6 +15,8 @@ groupadd GRP_SEC
 
 echo "Criando usuários..."
 
+# -crypt está deprecado para versão mais atualizada do ubuntu server, para que funcionasse a criação de senha utilizei o -1 no lugar
+# Exemplo de como foi ensinado no cruso: useradd carlos -m -s /bin/bash -p $(openssl passwd -crypt Senha123) -G GRP_ADM
 useradd carlos -m -s /bin/bash -p $(openssl passwd -1 Senha123) -G GRP_ADM
 useradd maria -m -s /bin/bash -p $(openssl passwd -1 Senha123) -G GRP_ADM
 useradd joao -m -s /bin/bash -p $(openssl passwd -1 Senha123) -G GRP_ADM
